@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "com.baomidou"
-version = "1.0"
+version = "3.5.15"
 base.archivesName = "mybatis-plus-ktx"
 
 dependencies {
