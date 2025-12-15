@@ -2,8 +2,9 @@ plugins {
     kotlin("jvm") version "2.2.20"
 }
 
-group = "com.spring.kotlin.best"
-version = "1.0-SNAPSHOT"
+group = "com.baomidou"
+version = "1.0"
+base.archivesName = "mybatis-plus-ktx"
 
 dependencies {
     testImplementation(kotlin("test"))
