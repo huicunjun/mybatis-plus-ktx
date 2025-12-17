@@ -27,4 +27,22 @@ interface CompareDsl<Children, T> : Compare<Children, KProperty1<in T, *>> {
     infix fun <V> KProperty1<in T, V>.notLikeLeft(value: V?) = this@CompareDsl.notLikeLeft(this, value)
     infix fun <V> KProperty1<in T, V>.likeRight(value: V?) = this@CompareDsl.likeRight(this, value)
     infix fun <V> KProperty1<in T, V>.notLikeRight(value: V?) = this@CompareDsl.notLikeRight(this, value)
+
+    infix fun <V> KProperty1<in T, String>.eqIfNotBlank(value: String?) =
+        this@CompareDsl.eq(value?.isNotBlank() == true, this, value)
+
+    infix fun <V> KProperty1<in T, String>.eqIfNotEmpty(value: String?) =
+        this@CompareDsl.eq(value?.isNotEmpty() == true, this, value)
+
+    infix fun <V> KProperty1<in T, V>.eqIfNotNull(value: V?) = this@CompareDsl.eq(value != null, this, value)
+
+
+    infix fun <V> KProperty1<in T, String>.likeIfNotBlank(value: String?) =
+        this@CompareDsl.eq(value?.isNotBlank() == true, this, value)
+
+    infix fun <V> KProperty1<in T, String>.likeIfNotEmpty(value: String?) =
+        this@CompareDsl.eq(value?.isNotEmpty() == true, this, value)
+
+    infix fun <V> KProperty1<in T, V>.likeIfNotNull(value: V?) = this@CompareDsl.like(value != null, this, value)
+
 }
